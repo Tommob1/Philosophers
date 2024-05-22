@@ -6,7 +6,13 @@
 /*   By: btomlins <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/22 16:21:56 by btomlins          #+#    #+#             */
-/*   Updated: 2024/05/22 16:21:57 by btomlins         ###   ########.fr       */
+/*   Updated: 2024/05/22 16:30:09 by btomlins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "philosophers.h"
+
+int	main(int argc,  char **argv)
+{
+	
+}
