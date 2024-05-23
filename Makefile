@@ -6,7 +6,7 @@
 #    By: btomlins <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/22 16:24:27 by btomlins          #+#    #+#              #
-#    Updated: 2024/05/23 15:22:34 by btomlins         ###   ########.fr        #
+#    Updated: 2024/05/23 15:36:49 by btomlins         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,3 +27,13 @@ SRCS	=	$(addprefix $(SRC_DIR), $(SRC))
 OBJ		=	$(patsubst $(SRC_DIR)%.c, $(OBJ_DIR)%.c, $(SRCS))
 
 all:		$(NAME)
+
+$(NAME):	$(OBJ)
+					@$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
+
+$(OBJ_DIR)%.o:		$(SRC_DIR)%.c
+									@mkdir -p $(@D)
+									@$(CC) $(CFLAGS) -c $< -o $@
+
+clean:
+			@$(RM) -r $(OBJ_DIR)
