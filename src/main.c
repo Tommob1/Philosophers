@@ -6,11 +6,11 @@
 /*   By: btomlins <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/22 16:21:56 by btomlins          #+#    #+#             */
-/*   Updated: 2024/05/22 16:30:09 by btomlins         ###   ########.fr       */
+/*   Updated: 2024/05/23 13:03:32 by btomlins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "philosophers.h"
+#include "../inc/philosophers.h"
 
 int	main(int argc,  char **argv)
 {
