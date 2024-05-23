@@ -6,7 +6,12 @@
 #    By: btomlins <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/22 16:24:27 by btomlins          #+#    #+#              #
-#    Updated: 2024/05/22 16:24:28 by btomlins         ###   ########.fr        #
+#    Updated: 2024/05/23 11:50:50 by btomlins         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
+NAME	=	philosophers
+
+CC		=	gcc
+CFLAGS	=	-Wall -Werror -Wextra -gcc
+RM		=	rm -f
