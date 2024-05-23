@@ -6,7 +6,7 @@
 /*   By: btomlins <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/22 16:26:10 by btomlins          #+#    #+#             */
-/*   Updated: 2024/05/23 13:29:54 by btomlins         ###   ########.fr       */
+/*   Updated: 2024/05/23 15:14:09 by btomlins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ typedef struct s_data
     long    meals_total;
     long    start_time;
     long    end_time;
+    bool    error_flag;
 }           t_data;
 
 #endif
