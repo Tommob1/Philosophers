@@ -6,7 +6,7 @@
 /*   By: btomlins <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/22 16:21:56 by btomlins          #+#    #+#             */
-/*   Updated: 2024/05/23 15:22:36 by btomlins         ###   ########.fr       */
+/*   Updated: 2024/05/31 14:43:56 by btomlins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,14 @@ int	main(int argc,  char **argv)
     {
         data.error_flag = 0;
         parse_input(&data, argv);
+        if (!data.error_flag)
+        {
+            data_init(&data);
+            sim_start(&data);
+            free_things(&data);
+        }
+        else
+            return (1);
     }
-
     return (0);
 }
