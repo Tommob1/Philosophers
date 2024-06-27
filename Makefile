@@ -6,7 +6,7 @@
 #    By: btomlins <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/22 16:24:27 by btomlins          #+#    #+#              #
-#    Updated: 2024/06/27 13:38:50 by btomlins         ###   ########.fr        #
+#    Updated: 2024/06/27 13:43:46 by btomlins         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,7 +43,16 @@ fclean:	clean
 			@$(RM) $(NAME)
 			@$(RM) src/a.out
 
-re:
+re:			fclean all
 
 .PHONY:		all clean fclean re leaks valgrind_leaks help
+
+leaks: re
+		@echo "\033[1;33m\nTesting for memory leaks...\003[0m"
+		leaks --atExit -- ./$(NAME) 5 800 200 3
+
+valgrind_leaks: re
+		@echo "\033[1;33m\nTesting for memory leaks with valgrind...\033[0m"
+		valgrind --leak-check=full ./$(NAME) 5 800 200 3
+
 
