@@ -6,7 +6,7 @@
 /*   By: btomlins <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 15:46:11 by btomlins          #+#    #+#             */
-/*   Updated: 2024/06/05 15:50:42 by btomlins         ###   ########.fr       */
+/*   Updated: 2024/06/27 13:52:00 by btomlins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,4 +28,9 @@ void	*ft_malloc(size_t bytes)
 		return (NULL);
 	}
 	return (retrieve);
+}
+
+long	gettime(t_time_unit time_unit)
+{
+	struct timeval	current_time;
 }
