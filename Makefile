@@ -6,7 +6,7 @@
 #    By: btomlins <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/22 16:24:27 by btomlins          #+#    #+#              #
-#    Updated: 2024/05/23 15:36:49 by btomlins         ###   ########.fr        #
+#    Updated: 2024/06/27 13:38:50 by btomlins         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,8 @@ INC		=	inc/
 SRC_DIR	=	src/
 OBJ_DIR	=	obj/
 
-SRC		=	main.c
+SRC		=	main.c \
+			utils.c
 
 SRCS	=	$(addprefix $(SRC_DIR), $(SRC))
 
@@ -37,3 +38,12 @@ $(OBJ_DIR)%.o:		$(SRC_DIR)%.c
 
 clean:
 			@$(RM) -r $(OBJ_DIR)
+
+fclean:	clean
+			@$(RM) $(NAME)
+			@$(RM) src/a.out
+
+re:
+
+.PHONY:		all clean fclean re leaks valgrind_leaks help
+
