@@ -6,7 +6,7 @@
 #    By: btomlins <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/22 16:24:27 by btomlins          #+#    #+#              #
-#    Updated: 2024/06/27 13:43:46 by btomlins         ###   ########.fr        #
+#    Updated: 2024/06/27 13:45:23 by btomlins         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -55,4 +55,5 @@ valgrind_leaks: re
 		@echo "\033[1;33m\nTesting for memory leaks with valgrind...\033[0m"
 		valgrind --leak-check=full ./$(NAME) 5 800 200 3
 
-
+help:
+		@echo "\033[1;35mMake options:\033[0m"
