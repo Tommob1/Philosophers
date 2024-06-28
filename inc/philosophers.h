@@ -6,7 +6,7 @@
 /*   By: btomlins <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/22 16:26:10 by btomlins          #+#    #+#             */
-/*   Updated: 2024/06/27 13:51:06 by btomlins         ###   ########.fr       */
+/*   Updated: 2024/06/28 22:47:40 by btomlins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,19 @@
 # define GREEN  "\033[1;32"
 
 typedef struct s_data	t_data;
+
+typedef pthread_mutex_t	t_mtx;
+
+typedef struct s_fork
+{
+	t_mtx	fork_mutex;
+	int		fork_id;
+}			t_fork;
+
+typedef struct s_ph
+{
+
+}		t_data;
 
 typedef struct s_data
 {
