@@ -6,7 +6,7 @@
 /*   By: btomlins <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/22 16:26:10 by btomlins          #+#    #+#             */
-/*   Updated: 2024/06/28 22:50:35 by btomlins         ###   ########.fr       */
+/*   Updated: 2024/06/28 22:55:28 by btomlins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,17 @@ typedef enum	e_time_unit
 	MILLISECONDS,
 	MICROSECONDS,
 }			t_time_unit;
+
+typedef enum	e_ftcode
+{
+	INIT,
+	CREATE,
+	LOCK,
+	UNLOCK,
+	JOIN,
+	DETACH,
+	DESTROY,
+}				t_ftcode;
 
 void		handle_mutex(t_mtx *mutex, bool *dst, bool value);
 void		handle_thread(pthread_t *thread_info, void*(*foo)(void *), void *t_data, t_ftcode ftcode);
