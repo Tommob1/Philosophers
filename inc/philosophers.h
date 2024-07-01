@@ -6,7 +6,7 @@
 /*   By: btomlins <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/22 16:26:10 by btomlins          #+#    #+#             */
-/*   Updated: 2024/06/28 22:55:28 by btomlins         ###   ########.fr       */
+/*   Updated: 2024/07/01 12:44:14 by btomlins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,13 @@
 
 # define PH_MAX 200
 
-# define RESET  "\033[0m"
-# define RED    "\033[1;31m"
-# define GREEN  "\033[1;32"
+# define RESET		"\033[0m"
+# define RED		"\033[1;31m"
+# define GREEN		"\033[1;32"
+# define YELLOW		"\033[1;33m"
+# define MAGENTA	"\033[1;35m"
+# define CYAN		"\033[1;36m"
+# define WHITE		"\033[1;37m"
 
 typedef struct s_data	t_data;
 
