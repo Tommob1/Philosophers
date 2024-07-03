@@ -6,7 +6,7 @@
 #    By: btomlins <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/22 16:24:27 by btomlins          #+#    #+#              #
-#    Updated: 2024/07/03 15:35:50 by btomlins         ###   ########.fr        #
+#    Updated: 2024/07/03 15:40:16 by btomlins         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,9 @@ SRC_DIR	=	src/
 OBJ_DIR	=	obj/
 
 SRC		=	main.c \
-			utils.c
+			utils.c \
+			sim_start.c \
+			monitor.c
 
 SRCS	=	$(addprefix $(SRC_DIR), $(SRC))
 
