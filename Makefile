@@ -6,7 +6,7 @@
 #    By: btomlins <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/22 16:24:27 by btomlins          #+#    #+#              #
-#    Updated: 2024/07/03 15:30:28 by btomlins         ###   ########.fr        #
+#    Updated: 2024/07/03 15:33:40 by btomlins         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -57,4 +57,6 @@ valgrind_leaks: re
 
 help:
 		@echo "\033[1;35mMake options:\033[0m"
-		@echo ""
+		@echo "\033[1;36mmake all\033[0m	Compile the program"
+		@echo "\033[1;36mmake clean\033[0m	Remove object files"
+		@echo "\033[1;36mmake fclean\033[0m	Remove object files and the executable"
