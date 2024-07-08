@@ -6,7 +6,7 @@
 /*   By: btomlins <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/03 15:45:25 by btomlins          #+#    #+#             */
-/*   Updated: 2024/07/08 16:15:14 by btomlins         ###   ########.fr       */
+/*   Updated: 2024/07/08 16:17:47 by btomlins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ static void	mutex_error_check(int status, t_ftcode ftcode)
 	if (status != 0 && (ftcode == LOCK || ftcode == UNLOCK
 			|| ftcode == INIT || ftcode == DESTROY))
 	{
-			error_msg("Metex error");
-			return ;
+		error_msg("Metex error");
+		return ;
 	}
 }
 
