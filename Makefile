@@ -6,7 +6,7 @@
 #    By: btomlins <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/22 16:24:27 by btomlins          #+#    #+#              #
-#    Updated: 2024/07/03 15:40:16 by btomlins         ###   ########.fr        #
+#    Updated: 2024/07/08 14:25:25 by btomlins         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -63,4 +63,5 @@ help:
 		@echo "\033[1;36mmake clean\033[0m	Remove object files"
 		@echo "\033[1;36mmake fclean\033[0m	Remove object files and the executable"
 		@echo "\033[1;36mmake re\033[0m   Re-build program from fresh after fclean"		@echo "\033[1;36mmake leaks\033[0m   Check for memory leaks in macOS"
+		@echo "\033[1;36mmake leaks\033[0m	Check for leaks int macOS"
 		@echo "\033[1;36mmake valgrind_leaks\033[0m   Check for leaks with valgrind in linux"
