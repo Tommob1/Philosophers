@@ -6,7 +6,7 @@
 /*   By: btomlins <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/22 16:26:10 by btomlins          #+#    #+#             */
-/*   Updated: 2024/07/12 15:30:17 by btomlins         ###   ########.fr       */
+/*   Updated: 2024/07/12 15:34:39 by btomlins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,21 @@ typedef struct s_data
 	long		end_time;
 	bool		error_flag;
 	pthread_t	death_check;
+	t_fork		*forks_arr;
+	t_ph		*philos_arr;
+	t_mtx		access_mutex;
+	t_mtx		write_mutex;
 }			t_data;
+
+typedef enum	e_status
+{
+	THINKING,
+	TAKES_LEFTFORK,
+	TAKES_RIGHTFORK,
+	EATING,
+	SLEEPING,
+	DIED,
+}			t_ph_status;
 
 typedef enum	e_time_unit
 {
@@ -84,6 +98,11 @@ typedef enum	e_ftcode
 	DETACH,
 	DESTROY,
 }				t_ftcode;
+
+void		parse_input(t_data *data, char **argv);
+void		data_init(t_data *data);
+void		sim_start(t_data *data);
+void		*single_philo(void *index);
 
 void		handle_mutex(t_mtx *mutex, bool *dst, bool value);
 void		handle_thread(pthread_t *thread_info, void*(*foo)(void *), void *t_data, t_ftcode ftcode);
