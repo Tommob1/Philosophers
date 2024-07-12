@@ -6,7 +6,7 @@
 /*   By: btomlins <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/22 16:26:10 by btomlins          #+#    #+#             */
-/*   Updated: 2024/07/01 12:44:14 by btomlins         ###   ########.fr       */
+/*   Updated: 2024/07/12 15:30:17 by btomlins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,16 @@ typedef struct s_fork
 
 typedef struct s_ph
 {
-
-}		t_data;
+	int			ph_id;
+	long		meal_count;
+	bool		max_meals;
+	long		meal_time;
+	pthread_t	ph_thread;
+	t_fork		*left_fork;
+	t_fork		*right_fork;
+	t_mtx		ph_mutex;
+	t_data		*data;
+}		t_ph;
 
 typedef struct s_data
 {
