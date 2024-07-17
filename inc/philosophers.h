@@ -6,7 +6,7 @@
 /*   By: btomlins <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/22 16:26:10 by btomlins          #+#    #+#             */
-/*   Updated: 2024/07/12 15:34:39 by btomlins         ###   ########.fr       */
+/*   Updated: 2024/07/17 15:01:50 by btomlins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,8 +103,20 @@ void		parse_input(t_data *data, char **argv);
 void		data_init(t_data *data);
 void		sim_start(t_data *data);
 void		*single_philo(void *index);
-
-void		handle_mutex(t_mtx *mutex, bool *dst, bool value);
+void		handle_mutex(t_mtx *mtx, t_ftcode ftcode);
 void		handle_thread(pthread_t *thread_info, void*(*foo)(void *), void *t_data, t_ftcode ftcode);
+void		set_bool(t_mtx *mutex, bool *dst, bool value);
+bool		get_bool(t_mtx *mutex, bool *value);
+void		set_long(t_mtx *mutex, long *dst, long value);
+long		get_long(t_mtx *mutex, long *value);
+void		wait_all_threads(t_data *data);
+void		active_thread_counter(t_mtx *mutex, long *value);
+void		*death_affirm(void *ph_data);
+void		ph_status(t_ph_status status, t_ph *philo);
+void		error_msg(const char *error_msg);
+void		*ft_malloc(size_t bytes);
+long		gettime(t_time_unit time_unit);
+void		ft_usleep(long sleep_time, t_data *data);
+void		free_things(t_data *data);
 
 #endif
