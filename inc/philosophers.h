@@ -6,7 +6,7 @@
 /*   By: btomlins <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/22 16:26:10 by btomlins          #+#    #+#             */
-/*   Updated: 2024/07/17 15:01:50 by btomlins         ###   ########.fr       */
+/*   Updated: 2024/07/17 15:03:16 by btomlins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,8 @@ typedef struct s_data
 	long		start_time;
 	long		end_time;
 	bool		error_flag;
+	bool		threads_ready;
+	long		active_philos_count;
 	pthread_t	death_check;
 	t_fork		*forks_arr;
 	t_ph		*philos_arr;
