@@ -6,7 +6,7 @@
 /*   By: btomlins <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/22 16:26:10 by btomlins          #+#    #+#             */
-/*   Updated: 2024/07/17 15:03:16 by btomlins         ###   ########.fr       */
+/*   Updated: 2024/07/18 17:29:32 by btomlins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ typedef struct s_data
 	t_mtx		write_mutex;
 }			t_data;
 
-typedef enum	e_status
+typedef enum e_status
 {
 	THINKING,
 	TAKES_LEFTFORK,
@@ -83,14 +83,14 @@ typedef enum	e_status
 	DIED,
 }			t_ph_status;
 
-typedef enum	e_time_unit
+typedef enum e_time_unit
 {
 	SECONDS,
 	MILLISECONDS,
 	MICROSECONDS,
 }			t_time_unit;
 
-typedef enum	e_ftcode
+typedef enum e_ftcode
 {
 	INIT,
 	CREATE,
@@ -106,7 +106,8 @@ void		data_init(t_data *data);
 void		sim_start(t_data *data);
 void		*single_philo(void *index);
 void		handle_mutex(t_mtx *mtx, t_ftcode ftcode);
-void		handle_thread(pthread_t *thread_info, void*(*foo)(void *), void *t_data, t_ftcode ftcode);
+void		handle_thread(pthread_t *thread_info,
+				void*(*foo)(void *), void *t_data, t_ftcode ftcode);
 void		set_bool(t_mtx *mutex, bool *dst, bool value);
 bool		get_bool(t_mtx *mutex, bool *value);
 void		set_long(t_mtx *mutex, long *dst, long value);
