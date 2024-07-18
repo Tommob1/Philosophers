@@ -6,7 +6,7 @@
 /*   By: btomlins <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/03 15:45:25 by btomlins          #+#    #+#             */
-/*   Updated: 2024/07/16 17:00:34 by btomlins         ###   ########.fr       */
+/*   Updated: 2024/07/18 17:31:41 by btomlins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,10 +48,12 @@ void	handle_mutex(t_mtx *mtx, t_ftcode ftcode)
 	}
 }
 
-void	handle_thread(pthread_t *thread_info, void *(*foo)(void *), void *t_data, t_ftcode ftcode)
+void	handle_thread(pthread_t *thread_info, void *(*foo)(void *),
+		void *t_data, t_ftcode ftcode)
 {
 	if (ftcode == CREATE)
-		thread_error_check(pthread_create(thread_info, NULL, foo, t_data), ftcode);
+		thread_error_check(pthread_create(thread_info, NULL,
+				foo, t_data), ftcode);
 	else if (ftcode == JOIN)
 		thread_error_check(pthread_join(*thread_info, NULL), ftcode);
 	else if (ftcode == DETACH)
