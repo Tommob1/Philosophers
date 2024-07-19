@@ -6,7 +6,7 @@
 /*   By: btomlins <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/27 14:11:27 by btomlins          #+#    #+#             */
-/*   Updated: 2024/07/19 14:15:54 by btomlins         ###   ########.fr       */
+/*   Updated: 2024/07/19 14:17:23 by btomlins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,14 @@ static bool philo_died(t_ph *philo)
 
 static bool all_philos_active(t_mtx *mutex, long *threads, long ph_total)
 {
+    bool    value;
 
+    value = false;
+    handle_mutex(mutex, LOCK);
+    if (*threads == ph_total)
+            value = true;
+    handle_mutex(mutex, UNLOCK);
+    return (value);
 }
 
 void    *death_affirm(void *ph_data)
