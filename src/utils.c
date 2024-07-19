@@ -6,7 +6,7 @@
 /*   By: btomlins <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 15:46:11 by btomlins          #+#    #+#             */
-/*   Updated: 2024/07/08 16:17:20 by btomlins         ###   ########.fr       */
+/*   Updated: 2024/07/19 14:23:06 by btomlins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,4 +33,14 @@ void	*ft_malloc(size_t bytes)
 long	gettime(t_time_unit time_unit)
 {
 	struct timeval	current_time;
+}
+
+void	ft_usleep(long sleep_time, t_data *data)
+{
+
+}
+
+void	free_things(t_data *data)
+{
+	
 }
