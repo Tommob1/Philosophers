@@ -6,7 +6,7 @@
 /*   By: btomlins <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/27 14:11:27 by btomlins          #+#    #+#             */
-/*   Updated: 2024/07/08 16:16:51 by btomlins         ###   ########.fr       */
+/*   Updated: 2024/07/19 14:15:54 by btomlins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,4 +23,28 @@ void    active_thread_counter(t_mtx *mutex, long *value)
     handle_mutex(mutex, LOCK);
     (*value)++;
     handle_mutex(mutex, UNLOCK);
+}
+
+static bool philo_died(t_ph *philo)
+{
+    long    elapsed;
+    long    dying_time;
+
+    if (get_bool(&philo->ph_mutex, &philo->max_meals))
+            return (false);
+    elapsed = gettime(MILLISECONDS) - get_long(&philo->ph_mutex, &philo->meal_time);
+    dying_time = philo->data->time_to_die / 1000;
+    if (elapsed > dying_time)
+            return (true);
+    return (false);
+}
+
+static bool all_philos_active(t_mtx *mutex, long *threads, long ph_total)
+{
+
+}
+
+void    *death_affirm(void *ph_data)
+{
+
 }
