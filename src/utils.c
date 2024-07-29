@@ -6,7 +6,7 @@
 /*   By: btomlins <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 15:46:11 by btomlins          #+#    #+#             */
-/*   Updated: 2024/07/19 14:23:06 by btomlins         ###   ########.fr       */
+/*   Updated: 2024/07/29 17:23:03 by btomlins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,12 @@ void	*ft_malloc(size_t bytes)
 long	gettime(t_time_unit time_unit)
 {
 	struct timeval	current_time;
+
+	if (gettimeofday(&current_time, NULL) != 0)
+	{
+		error_msg("Error: gettimeofday failed");
+		return (1);
+	}
 }
 
 void	ft_usleep(long sleep_time, t_data *data)
