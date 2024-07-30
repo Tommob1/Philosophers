@@ -6,7 +6,7 @@
 /*   By: btomlins <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 15:46:11 by btomlins          #+#    #+#             */
-/*   Updated: 2024/07/30 15:30:59 by btomlins         ###   ########.fr       */
+/*   Updated: 2024/07/30 15:33:37 by btomlins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,5 +77,18 @@ void	ft_usleep(long sleep_time, t_data *data)
 
 void	free_things(t_data *data)
 {
-	
+	t_ph	*philo;
+	int		i;
+
+	i = 0;
+	while (i < data->ph_total)
+	{
+		philo = data->philos_arr + i;
+		handle_mutex(&philo->ph_mutex, DESTROY);
+		i++;
+	}
+	handle_mutex(&data->write_mutex, DESTROY);
+	handle_mutex(&data->access_mutex, DESTROY);
+	free(data->forks_arr);
+	free(data->philos_arr);
 }
