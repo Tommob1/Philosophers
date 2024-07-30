@@ -6,7 +6,7 @@
 /*   By: btomlins <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 15:46:11 by btomlins          #+#    #+#             */
-/*   Updated: 2024/07/30 15:26:18 by btomlins         ###   ########.fr       */
+/*   Updated: 2024/07/30 15:30:59 by btomlins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,23 @@ long	gettime(t_time_unit time_unit)
 
 void	ft_usleep(long sleep_time, t_data *data)
 {
+	long	start;
+	long	elapsed;
+	long	remaining;
 
+	start = gettime(MICROSECONDS);
+	while (gettime(MICROSECONDS))
+	{
+		if (get_bool(&data->access_mutex, &data->end_time))
+			break ;
+		elapsed = gettime(MICROSECONDS) - start;
+		remaining = sleep_time - elapsed;
+		if (remaining > 10000)
+			usleep(remaining / 2);
+		else
+			while (gettime(MICROSECONDS) - start < sleep_time)
+					;
+	}
 }
 
 void	free_things(t_data *data)
