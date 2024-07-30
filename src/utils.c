@@ -6,7 +6,7 @@
 /*   By: btomlins <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 15:46:11 by btomlins          #+#    #+#             */
-/*   Updated: 2024/07/29 17:23:03 by btomlins         ###   ########.fr       */
+/*   Updated: 2024/07/30 15:26:18 by btomlins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,19 @@ long	gettime(t_time_unit time_unit)
 		error_msg("Error: gettimeofday failed");
 		return (1);
 	}
+
+	if (time_unit == MILLISECONDS)
+		return (current_time.tv_sec * 1000 + current_time.tv_usec / 1000);
+	else if (time_unit == MICROSECONDS)
+		return (current_time.tv_sec * 1000000 + current_time.tv_usec);
+	else if (time_unit == SECONDS)
+		return (current_time.tv_sec + current_time.tv_usec / 1000000);
+	else
+	{
+		error_msg("INVALID TIME UNIT SPECIFIED");
+		return (1);
+	}
+	return (-1);
 }
 
 void	ft_usleep(long sleep_time, t_data *data)
