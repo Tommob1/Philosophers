@@ -6,7 +6,7 @@
 /*   By: btomlins <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/03 15:45:19 by btomlins          #+#    #+#             */
-/*   Updated: 2024/08/02 16:28:08 by btomlins         ###   ########.fr       */
+/*   Updated: 2024/08/02 17:55:42 by btomlins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,18 @@ static long ft_atol(const char *s)
 {
     long    res;
     res = 0;
-    
+    while ((*s == '+' || *s == 32 || (*s >= 9 && *s <= 13)))
+        s++;
+    if (*s == '-')
+        return (0);
+    if (!(*s >= '0' && *s <= '9'))
+    {
+        error_msg("Input Error: Digit values only");
+        return (0);
+    }
+    while (*s >= '0' && *s <= '9')
+        res = (res * 10) + (*s++ - '0');
+        return (res);
 }
 
 static long check_int_range(t_data *data, char *argv)
