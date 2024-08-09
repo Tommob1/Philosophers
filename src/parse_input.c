@@ -6,7 +6,7 @@
 /*   By: btomlins <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/03 15:45:19 by btomlins          #+#    #+#             */
-/*   Updated: 2024/08/09 13:32:19 by btomlins         ###   ########.fr       */
+/*   Updated: 2024/08/09 13:36:25 by btomlins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,5 +49,13 @@ static long check_int_range(t_data *data, char *argv)
 
 void    parse_input(t_data *data, char **argv)
 {
-
+    data->ph_total = check_int_range(data, argv[1]);
+    if (data->ph_total > PH_MAX || data->ph_total < 1)
+    {
+        error_msg("Input Error: Total number of philos must be 1-200");
+        data->error_flag = 1;
+    }
+    data->time_to_die = check_int_range(data, argv[2]) * 1000;
+    data->time_to_eat = check_int_range(data, argv[3]) * 1000;
+    data->time_to_sleep = check_int_range(data, argv[4]) * 1000;
 }
