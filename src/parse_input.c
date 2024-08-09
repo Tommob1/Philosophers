@@ -6,7 +6,7 @@
 /*   By: btomlins <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/03 15:45:19 by btomlins          #+#    #+#             */
-/*   Updated: 2024/08/09 13:36:25 by btomlins         ###   ########.fr       */
+/*   Updated: 2024/08/09 13:39:20 by btomlins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,4 +58,14 @@ void    parse_input(t_data *data, char **argv)
     data->time_to_die = check_int_range(data, argv[2]) * 1000;
     data->time_to_eat = check_int_range(data, argv[3]) * 1000;
     data->time_to_sleep = check_int_range(data, argv[4]) * 1000;
+
+    if (data->time_to_die < 60000 || data->time_to_sleep < 60000 || data->time_to_eat < 60000)
+    {
+        error_msg("Input Error: Each of the 'time_to' values must exceed 60");
+        data->error_flag = 1;
+    }
+    if (argv[5])
+        data->meals_total = check_int_range(data, argv[5]);
+    else
+        data->meals_total = -1;
 }
