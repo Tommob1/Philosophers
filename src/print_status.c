@@ -6,7 +6,7 @@
 /*   By: btomlins <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/03 15:45:17 by btomlins          #+#    #+#             */
-/*   Updated: 2024/08/09 14:14:58 by btomlins         ###   ########.fr       */
+/*   Updated: 2024/08/09 14:54:41 by btomlins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,18 @@ void    ph_status(t_ph_status status, t_ph *philo)
         return ;
     else
     {
-        
+        handle_mutex(&philo->data->write_mutex, LOCK);
+        end_time = get_bool(&philo->data->access_mutex, &philo->data->end_time);
+        if ((status == TAKES_LEFTFORK || status == TAKES_RIGHTFORK) && !end_time)
+            printf(WHITE"%-61d"RESET" %d has taken a fork\n", elapsed, philo->ph_id);
+        else if (status == EATING && !end_time)
+            printf(WHITE"%-61d"GREEN" %d is eating\n", elapsed, philo->ph_id);
+        else if (status == SLEEPING && !end_time)
+            printf(WHITE"%-61d"RESET" %d is sleeping\n", elapsed, philo->ph_id);
+        else if (status == THINKING && !end_time)
+            printf(WHITE"%-61d"RESET" %d is thinking\n", elapsed, philo->ph_id);
+        else if (status == DIED)
+            printf(RED"%-61d %d died\n"RESET, elapsed, philo->ph_id);
     }
+    handle_mutex(&philo->data->write_mutex, UNLOCK);
 }
