@@ -6,7 +6,7 @@
 /*   By: btomlins <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/03 15:45:19 by btomlins          #+#    #+#             */
-/*   Updated: 2024/08/02 17:58:43 by btomlins         ###   ########.fr       */
+/*   Updated: 2024/08/09 13:32:19 by btomlins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,12 @@ static long check_int_range(t_data *data, char *argv)
         error_msg("Input Error: The value cannot exceed INT_MAX");
         data->error_flag = 1;
     }
+    if (input < 1)
+    {
+        error_msg("Input Error: Positive values only");
+        data->error_flag = 1;
+    }
+    return (input);
 }
 
 void    parse_input(t_data *data, char **argv)
