@@ -6,13 +6,13 @@
 /*   By: btomlins <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/27 14:10:20 by btomlins          #+#    #+#             */
-/*   Updated: 2024/08/14 16:04:51 by btomlins         ###   ########.fr       */
+/*   Updated: 2024/08/14 17:20:56 by btomlins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/philosophers.h"
 
-static void thinking(t_ph *philo, bool pre_simulation)
+static void	thinking(t_ph *philo, bool pre_simulation)
 {
 	long	eating_time;
 	long	sleeping_time;
@@ -30,22 +30,22 @@ static void thinking(t_ph *philo, bool pre_simulation)
 	ft_usleep(thinking_time * 0.3, philo->data);
 }
 
-static void synchronize_dining(t_ph *philo)
+static void	synchronize_dining(t_ph *philo)
 {
 
 }
 
-static void eating(t_ph *philo)
+static void	eating(t_ph *philo)
 {
 
 }
 
-static void *dining_philos(void *ph_data)
+static void	*dining_philos(void *ph_data)
 {
 
 }
 
-void    sim_start(t_data *data)
+void	sim_start(t_data *data)
 {
 
 }
