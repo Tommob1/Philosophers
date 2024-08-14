@@ -6,7 +6,7 @@
 /*   By: btomlins <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/03 15:45:19 by btomlins          #+#    #+#             */
-/*   Updated: 2024/08/14 13:54:21 by btomlins         ###   ########.fr       */
+/*   Updated: 2024/08/14 13:57:29 by btomlins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ static long	ft_atol(const char *s)
 {
 	long	res;
 	res = 0;
+	
 	while ((*s == '+' || *s == 32 || (*s >= 9 && *s <= 13)))
 		s++;
 	if (*s == '-')
@@ -27,7 +28,7 @@ static long	ft_atol(const char *s)
 	}
 	while (*s >= '0' && *s <= '9')
 		res = (res * 10) + (*s++ - '0');
-		return (res);
+	return (res);
 }
 
 static long	check_int_range(t_data *data, char *argv)
