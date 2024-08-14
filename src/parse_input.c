@@ -6,7 +6,7 @@
 /*   By: btomlins <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/03 15:45:19 by btomlins          #+#    #+#             */
-/*   Updated: 2024/08/14 13:57:29 by btomlins         ###   ########.fr       */
+/*   Updated: 2024/08/14 16:01:09 by btomlins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 static long	ft_atol(const char *s)
 {
 	long	res;
+
 	res = 0;
-	
 	while ((*s == '+' || *s == 32 || (*s >= 9 && *s <= 13)))
 		s++;
 	if (*s == '-')
@@ -34,6 +34,7 @@ static long	ft_atol(const char *s)
 static long	check_int_range(t_data *data, char *argv)
 {
 	long	input;
+
 	input = ft_atol(argv);
 	if (input > INT_MAX)
 	{
@@ -59,8 +60,8 @@ void	parse_input(t_data *data, char **argv)
 	data->time_to_die = check_int_range(data, argv[2]) * 1000;
 	data->time_to_eat = check_int_range(data, argv[3]) * 1000;
 	data->time_to_sleep = check_int_range(data, argv[4]) * 1000;
-
-	if (data->time_to_die < 60000 || data->time_to_sleep < 60000 || data->time_to_eat < 60000)
+	if (data->time_to_die < 60000 || data->time_to_sleep < 60000
+		|| data->time_to_eat < 60000)
 	{
 		error_msg("Input Error: Each of the 'time_to' values must exceed 60");
 		data->error_flag = 1;
