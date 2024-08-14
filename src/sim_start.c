@@ -6,7 +6,7 @@
 /*   By: btomlins <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/27 14:10:20 by btomlins          #+#    #+#             */
-/*   Updated: 2024/08/14 17:46:14 by btomlins         ###   ########.fr       */
+/*   Updated: 2024/08/14 17:52:11 by btomlins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,5 +79,27 @@ static void	*dining_philos(void *ph_data)
 
 void	sim_start(t_data *data)
 {
+	int	i;
 
+	i = 0;
+	if (data->meals_total == 0)
+		return ;
+	else if (data->ph_total == 1)
+		handle_thread(&data->philos_arr[0].ph_thread, single_philo, &data->philos_arr[0], CREATE);
+	else
+	{
+		while (i < data->ph_total)
+		{
+			handle_thread(&data->philos_arr[i].ph_thread, dining_philos, &data->philos_arr[i], CREATE);
+			i++;
+		}
+	}
+	handle_thread(&data->death_check, death_affirm, data, CREATE);
+	data->start_time = gettime(MILLISECONDS);
+	set_bool(&data->access_mutex, &data->threads_ready, true);
+	i = 0;
+	while (i < data->ph_total)
+		handle_thread(&data->philos_arr[i++].ph_thread, NULL, NULL, JOIN);
+	set_bool(&data->access_mutex, &data->end_time, true);
+	handle_mutex(&data->death_check, NULL, NULL, JOIN);
 }
