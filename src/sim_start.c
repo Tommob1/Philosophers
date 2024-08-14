@@ -6,7 +6,7 @@
 /*   By: btomlins <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/27 14:10:20 by btomlins          #+#    #+#             */
-/*   Updated: 2024/08/14 17:45:43 by btomlins         ###   ########.fr       */
+/*   Updated: 2024/08/14 17:46:14 by btomlins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,8 @@ static void	*dining_philos(void *ph_data)
 	philo = (t_ph *)ph_data;
 	wait_all_threads(philo->data);
 	set_long(&philo->ph_mutex, &philo->meal_time, gettime(MILLISECONDS));
-	active_thread_counter(&philo->data->access_mutex, &philo->data->active_philos_count);
+	active_thread_counter(&philo->data->access_mutex, &philo->data
+		->active_philos_count);
 	synchronize_dining(philo);
 	while (!get_bool(&philo->data->access_mutex, &philo->data->end_time))
 	{
