@@ -6,7 +6,7 @@
 /*   By: btomlins <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/27 14:10:20 by btomlins          #+#    #+#             */
-/*   Updated: 2024/08/14 17:20:56 by btomlins         ###   ########.fr       */
+/*   Updated: 2024/08/14 17:29:10 by btomlins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,10 @@ static void	thinking(t_ph *philo, bool pre_simulation)
 
 static void	synchronize_dining(t_ph *philo)
 {
-
+	if (philo->ph_id % 2 == 0)
+		ft_usleep(30000, philo->data);
+	else
+		thinking(philo, true);
 }
 
 static void	eating(t_ph *philo)
