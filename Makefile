@@ -6,11 +6,11 @@
 #    By: btomlins <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/22 16:24:27 by btomlins          #+#    #+#              #
-#    Updated: 2024/08/15 16:54:04 by btomlins         ###   ########.fr        #
+#    Updated: 2024/08/15 16:55:35 by btomlins         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	=	philosophers
+NAME	=	main
 
 CC		=	gcc
 CFLAGS	=	-Wall -Werror -Wextra -gcc
