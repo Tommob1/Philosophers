@@ -6,7 +6,7 @@
 /*   By: btomlins <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/27 14:10:20 by btomlins          #+#    #+#             */
-/*   Updated: 2024/08/14 17:52:56 by btomlins         ###   ########.fr       */
+/*   Updated: 2024/08/19 16:44:09 by btomlins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,5 +103,5 @@ void	sim_start(t_data *data)
 	while (i < data->ph_total)
 		handle_thread(&data->philos_arr[i++].ph_thread, NULL, NULL, JOIN);
 	set_bool(&data->access_mutex, &data->end_time, true);
-	handle_mutex(&data->death_check, NULL, NULL, JOIN);
+	handle_thread(&data->death_check, NULL, NULL, JOIN);
 }
