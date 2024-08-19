@@ -6,7 +6,7 @@
 #    By: btomlins <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/22 16:24:27 by btomlins          #+#    #+#              #
-#    Updated: 2024/08/19 16:06:01 by btomlins         ###   ########.fr        #
+#    Updated: 2024/08/19 16:12:18 by btomlins         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,7 +32,7 @@ SRC		=	main.c \
 
 SRCS	=	$(addprefix $(SRC_DIR), $(SRC))
 
-OBJ		=	$(patsubst $(SRC_DIR)%.c, $(OBJ_DIR)%.c, $(SRCS))
+OBJ		=	$(patsubst $(SRC_DIR)%.c, $(OBJ_DIR)%.o, $(SRCS))
 
 all:		$(NAME)
 
