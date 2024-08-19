@@ -6,7 +6,7 @@
 /*   By: btomlins <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/03 15:45:17 by btomlins          #+#    #+#             */
-/*   Updated: 2024/08/19 16:49:20 by btomlins         ###   ########.fr       */
+/*   Updated: 2024/08/19 16:57:46 by btomlins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,8 @@ void	ph_status(t_ph_status status, t_ph *philo)
 			printf(WHITE"%-6ld"RESET" %d has taken a fork\n", elapsed,
 				philo->ph_id);
 		else if (status == EATING && !end_time)
-			printf(WHITE"%-6ld"GREEN" %d is eating\n"RESET, elapsed, philo->ph_id);
+			printf(WHITE"%-6ld"GREEN" %d is eating\n"RESET, elapsed,
+				philo->ph_id);
 		else if (status == SLEEPING && !end_time)
 			printf(WHITE"%-6ld"RESET" %d is sleeping\n", elapsed, philo->ph_id);
 		else if (status == THINKING && !end_time)
