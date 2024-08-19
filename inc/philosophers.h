@@ -6,7 +6,7 @@
 /*   By: btomlins <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/22 16:26:10 by btomlins          #+#    #+#             */
-/*   Updated: 2024/07/18 17:29:32 by btomlins         ###   ########.fr       */
+/*   Updated: 2024/08/19 16:19:13 by btomlins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ typedef struct s_data
 	long		time_to_sleep;
 	long		meals_total;
 	long		start_time;
-	long		end_time;
+	bool		end_time;
 	bool		error_flag;
 	bool		threads_ready;
 	long		active_philos_count;
