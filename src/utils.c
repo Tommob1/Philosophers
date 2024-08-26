@@ -6,7 +6,7 @@
 /*   By: btomlins <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 15:46:11 by btomlins          #+#    #+#             */
-/*   Updated: 2024/08/14 13:52:41 by btomlins         ###   ########.fr       */
+/*   Updated: 2024/08/26 12:14:56 by btomlins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ void	ft_usleep(long sleep_time, t_data *data)
 	long	remaining;
 
 	start = gettime(MICROSECONDS);
-	while (gettime(MICROSECONDS))
+	while (gettime(MICROSECONDS) - start < sleep_time)
 	{
 		if (get_bool(&data->access_mutex, &data->end_time))
 			break ;
