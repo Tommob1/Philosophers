@@ -6,7 +6,7 @@
 /*   By: btomlins <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/22 16:26:10 by btomlins          #+#    #+#             */
-/*   Updated: 2024/08/19 16:19:13 by btomlins         ###   ########.fr       */
+/*   Updated: 2024/08/26 12:53:20 by btomlins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@
 
 # define RESET		"\033[0m"
 # define RED		"\033[1;31m"
-# define GREEN		"\033[1;32"
+# define GREEN		"\033[1;32m"
 # define YELLOW		"\033[1;33m"
 # define MAGENTA	"\033[1;35m"
 # define CYAN		"\033[1;36m"
