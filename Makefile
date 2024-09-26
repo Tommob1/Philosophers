@@ -6,14 +6,14 @@
 #    By: btomlins <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/22 16:24:27 by btomlins          #+#    #+#              #
-#    Updated: 2024/08/19 16:12:18 by btomlins         ###   ########.fr        #
+#    Updated: 2024/09/26 19:05:38 by btomlins         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	=	main
 
 CC		=	gcc
-CFLAGS	=	-Wall -Werror -Wextra -g
+CFLAGS	=	-Wall -Werror -Wextra -g -fsanitize=address
 RM		=	rm -f
 
 INC		=	inc/
